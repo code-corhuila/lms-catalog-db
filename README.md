@@ -1,9 +1,24 @@
 # lms-catalog-db
 
-> Catalog bounded context: schema and migrations
+> Catalog bounded context: database
 
 Part of the **LMS Library** distributed system — team `lms-library`, Grupo 2.
 Governance and documentation live in [`library-docs`](https://github.com/code-corhuila/library-docs).
+
+## Migration scope
+
+**Comes from** `lms-library` → the `catalog-db` and `catalog-migrate` service blocks of
+`docker-compose.yml`, the `catalog-db-data` volume, and the DDL currently sitting in
+`catalog-service/migrations/`.
+
+**This repository owns the whole database structure** — image, configuration, volume, healthcheck,
+schema, seeds and migrations. `lms-catalog-api` only consumes it; it no longer carries the schema.
+
+Database: `catalog_db`.
+
+The full map lives in `library-docs`.
+
+---
 
 ## Branching
 
