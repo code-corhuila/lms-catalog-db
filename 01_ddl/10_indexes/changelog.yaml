@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: ddl-indexes-001
+      author: OscarAreiza
+      labels: "HU-04,HU-05,ddl,indexes"
+      comment: "Unique isbn, plus title/author/category for HU-05's search"
+      changes:
+        - sqlFile:
+            path: 001_create_indexes.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/10_indexes/001_create_indexes.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: false
